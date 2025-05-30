@@ -30,6 +30,7 @@ import com.antgroup.geaflow.dsl.udf.graph.IncKHopAlgorithm;
 import com.antgroup.geaflow.dsl.udf.graph.IncWeakConnectedComponents;
 import com.antgroup.geaflow.dsl.udf.graph.KCore;
 import com.antgroup.geaflow.dsl.udf.graph.KHop;
+import com.antgroup.geaflow.dsl.udf.graph.CommonNeighborsForVertexSet;
 import com.antgroup.geaflow.dsl.udf.graph.PageRank;
 import com.antgroup.geaflow.dsl.udf.graph.SingleSourceShortestPath;
 import com.antgroup.geaflow.dsl.udf.graph.TriangleCount;
@@ -175,6 +176,7 @@ public class BuildInSqlFunctionTable extends ListSqlOperatorTable {
             .add(GeaFlowFunction.of(Like.class))
             .add(GeaFlowFunction.of(LTrim.class))
             .add(GeaFlowFunction.of(RegExp.class))
+            .add(GeaFlowFunction.of(CommonNeighborsForVertexSet.class))
             .add(GeaFlowFunction.of(RegexpCount.class))
             .add(GeaFlowFunction.of(RegExpExtract.class))
             .add(GeaFlowFunction.of(RegExpReplace.class))

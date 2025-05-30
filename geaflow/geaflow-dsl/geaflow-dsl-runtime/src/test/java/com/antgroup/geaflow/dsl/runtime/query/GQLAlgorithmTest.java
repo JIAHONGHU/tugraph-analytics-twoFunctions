@@ -96,6 +96,15 @@ public class GQLAlgorithmTest {
             .execute()
             .checkSinkResult();
     }
+    @Test
+    public void testAlgorithm_009() throws Exception {
+        QueryTester
+            .build()
+            .withGraphDefine("/query/modern_graph.sql")
+            .withQueryPath("/query/gql_algorithm_009.sql")
+            .execute()
+            .checkSinkResult();
+    }
 
     @Test
     public void testAlgorithmKHop() throws Exception {
