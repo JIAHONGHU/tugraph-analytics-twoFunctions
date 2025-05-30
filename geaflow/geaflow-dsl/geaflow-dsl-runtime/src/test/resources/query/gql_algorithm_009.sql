@@ -27,6 +27,6 @@ CREATE TABLE result_tb (
 USE GRAPH modern;
 
 INSERT INTO result_tb
-CALL common_neighbors_for_vertex_set(3, "|", 2, 5) YIELD (id)
+CALL common_neighbors_for_vertex_set(3, '|', 2, 5) YIELD (id)
 RETURN cast (id as int)
 ;

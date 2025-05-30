@@ -54,18 +54,15 @@ public class CommonNeighborsForVertexSet implements AlgorithmUserFunction<Object
         this.context = context;
 		Boolean sep = false;
 		int idx = 0;
-		Class<?> idClazz = context.getGraphSchema().getIdType().getTypeClass();
+		// Class<?> idClazz = context.getGraphSchema().getIdType().getTypeClass();
 		for (Object param : params) {
 			if (param instanceof String && ((String) param).equals("|")) {
 				sep = true;
 				idx ++;
 				break;
-			} else if (idClazz.isInstance(param)) {
+			} else {
 				A.add(TypeCastUtil.cast(param, context.getGraphSchema().getIdType()));
 				idx ++;
-			}
-			else{
-				throw new IllegalArgumentException("Only support string and id type argument, usage: common_neighbors_for_vertex_set(id_a, id_b, |, id_c, id_d)");
 			}
 		}
 		if (!sep) {
